@@ -14,9 +14,13 @@ use App\Http\Controllers\Auth\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
 Route::get('/', function () {
-    return view('welcome');
+    
+    return view('auth/register');
 });
 
 Route::get('/dashboard', function () {
