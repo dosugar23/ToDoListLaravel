@@ -11,17 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->enum('priority', ['high', 'medium', 'low']);
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->date('due_date')->nullable();
-            $table->boolean('status')->default(false); // false for pending, true for completed
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tasks')) {
+            Schema::create('tasks', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('user_id')->constrained()->onDelete('cascade');
+                $table->string('title');
+                $table->text('description')->nullable();
+                $table->enum('priority', ['high', 'medium', 'low']);
+                $table->foreignId('category_id')->constrained()->onDelete('cascade');
+                $table->date('due_date')->nullable();
+                $table->boolean('status')->default(false); // false for pending, true for completed
+                $table->timestamps();
+            });
+        }
     }
 
     /**
