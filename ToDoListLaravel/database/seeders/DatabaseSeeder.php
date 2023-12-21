@@ -2,15 +2,16 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    public function run()
-    {
-        $this->call(UsersTableSeeder::class);
-        $this->call(TasksTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run() {
+        \App\Models\Todo::factory(10)->create();
     }
 }
