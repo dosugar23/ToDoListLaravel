@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    public function tasks()
-{
-    return $this->hasMany(Task::class);
-}
+
+    public function products()
+    {
+        return $this->hasMany(Todo::class);
+    }
+
+    protected $fillable = [
+        'name',
+        'description',
+    ];
 }
