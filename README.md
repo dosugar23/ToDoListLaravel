@@ -10,6 +10,7 @@
 * [Sanctum](https://github.com/laravel/sanctum) - Sanctum
 * [Telescope](https://github.com/laravel/telescope) - Telescope
 
+## How to run the application
 ```sh
 $ cd ToDoListLaravel
 $ composer install
