@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
         [
             'id' => 2,
             'user_id' => 1,
-            'name' => 'Home',
+            'name' => 'Work',
             'description' => '',
         ],
     ];
