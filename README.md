@@ -7,8 +7,8 @@
 * [Laravel](https://github.com/laravel/laravel) - The Laravel PHP framework.
 * [Livewire](https://github.com/livewire/livewire) - Laravel Livewire.
 * [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) - Tailwind.
-* [Sanctum] (https://github.com/laravel/sanctum) - Sanctum
-* [Telescope] (https://github.com/laravel/telescope) - Telescope
+* [Sanctum](https://github.com/laravel/sanctum) - Sanctum
+* [Telescope](https://github.com/laravel/telescope) - Telescope
 
 ```sh
 $ cd ToDoListLaravel
