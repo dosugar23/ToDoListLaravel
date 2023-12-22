@@ -5,7 +5,7 @@
     </div>
 
     <form class="flex" method="POST" wire:submit.prevent='addTodo'> 
-    <x-text-input wire:model='todo' class="w-full mr-2"/>
+    <x-text-input placeholder="What do you need to do?" wire:model='todo' class="w-full mr-2 "/>
 
     <x-primary-button>
         Add
@@ -13,16 +13,16 @@
     </form>
     <br>
     @forelse ( $todos as $todo )
-        {{-- Fist todo --}}
-    <div class="flex mt-5 py-4 justify-center justify-between">
+        {{-- First todo --}}
+    <div class="flex mt-5 py-5 justify-center justify-between">
     <div>
-    <input id="green-checkbox" wire:click='markCompleted({{  $todo->id }})' @if($todo->is_completed) checked @endif type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 rounded focus:ring-green-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+    <input id="green-checkbox" wire:click='markCompleted({{  $todo->id }})' @if($todo->is_completed) checked @endif type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 rounded focus:ring-green-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ">
     </div>
     <div>
     @if ($edit == $todo->id)
     <x-text-input wire:model='editedTodo' class="w-full mr-2"/>
     @else
-    <span @if ($todo->is_completed ) class='text-green-600' @endif> {{ $todo->todo }}</span>
+    <span @if ($todo->is_completed ) class='text-green-600 line-through' @endif> {{ $todo->todo }}</span>
     @endif
     </div>
     
