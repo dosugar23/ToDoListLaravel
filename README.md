@@ -29,3 +29,5 @@ Run migrations and start the server:
 $ php artisan migrate
 $ php artisan serve
 ```
+## Demonstate Video
+[![Watch the video](https://www.canva.com/design/DAF3xeiMoro/8Kg0jmasfqZWA2couSi7gA/view?utm_content=DAF3xeiMoro&utm_campaign=designshare&utm_medium=link&utm_source=editor)](https://drive.google.com/file/d/1LZwzHkv8tfELSCFH32yvd70kLFJ-eiBP/view?usp=drive_link)
