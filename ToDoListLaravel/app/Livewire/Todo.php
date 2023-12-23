@@ -47,7 +47,7 @@ class Todo extends Component
     public function updateTodo($todoId)
     {
         $validated = $this->validateOnly('editedTodo');
-        $this->repo->update($todoId,  $validated['editedTodo']);
+        $this->repo->update($todoId, $validated['editedTodo']);
         $this->cancelEdit();
     }
 
