@@ -29,6 +29,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|unique:categories|max:255',
+            'user_id' => 'required|exists:users,id',
             'description' => 'required|max:255',
         ]);
 
@@ -50,6 +51,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => 'nullable|unique:categories|max:255',
+            'user_id' => 'required|exists:users,id',
             'description' => 'nullable|max:255',
         ]);
 
