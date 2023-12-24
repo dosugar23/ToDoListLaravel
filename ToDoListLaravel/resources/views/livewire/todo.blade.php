@@ -1,11 +1,13 @@
 <div>
     <div class="flex justify-center">
-
         <x-input-error :messages="$errors->get('todo')" class="mt-2" />
     </div>
-
+    <form class="flex" method="POST" wire:submit.prevent='search'>
+        <x-text-input placeholder="Search To Do..." wire:model.live="search" class="w-full"/>
+    </form> 
+    <br>
     <form class="flex" method="POST" wire:submit.prevent='addTodo'>
-        <x-text-input placeholder="What do you need to do?" wire:model='todo' class="w-full mr-2 " />
+        <x-text-input placeholder="What do you need to do?" wire:model='todo' class="w-full mr-2" />
 
         <x-primary-button>
             Add

@@ -19,10 +19,13 @@ class TodoRepo
     }
 
 
-    public function fetchAll()
+    public function fetchAll($search = null)
     {
-        $todos = auth()->user()->todos()->latest()->paginate(3);
-        return $todos;
+        $todos = auth()->user()->todos();
+        if ($search) {
+            $todos->where('todo', 'like',"$search%");
+        }
+        return $todos->latest()->paginate(3);
     }
 
 
